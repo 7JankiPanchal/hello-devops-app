@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello DevOps</title>
+</head>
+<body>
+  <h1>Simple DevOps Project</h1>
+  <button onclick="callBackend()">Call Backend</button>
+  <p id="msg"></p>
+
+  <script>
+    function callBackend() {
+      fetch("http://backend:5000/")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("msg").innerText = data
+        })
+    }
+  </script>
+</body>
+</html>
